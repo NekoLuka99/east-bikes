@@ -19,7 +19,7 @@ body {
       color: #ff9800;
       font-size: 32px;
     }
-    .filters {
+  .filters {
       text-align: center;
       margin: 20px 0;
     }
@@ -143,6 +143,26 @@ body {
       font-size: 14px;
       border-top: 1px solid #444;
     }
+
+/* Suchfeld & Dropdown */
+input[type="text"], select {
+  background-color: rgba(40, 40, 40, 0.9);
+  color: #fff;
+  border: 1px solid #555;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* Infobox & Impressum */
+.infobox, footer {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+  
 
 /* Suchfeld & Dropdown */
 input[type="text"], select {
