@@ -40,8 +40,14 @@
           <h2>Sportbikes</h2>
           <div class="category-grid">
             
-    <div class="category-item" data-category="sportbikes" data-price="15000">
-        <img src="https://static.wikia.nocookie.net/gtawiki/images/4/45/Bati801-GTAV.png" alt="Pegassi Bati 801" />
+    <div class="category-item"
+      data-category="sportbikes"
+      data-price="15000"
+      data-speed="320 km/h"
+      data-weight="210 kg"
+      data-acceleration="2.8 s"
+      onclick="openPopup(this)">
+        <img src="img/bati.png" alt="Pegassi Bati 801" />
         <p>
           <strong>Pegassi Bati 801</strong><br />
           Sportbike mit hoher Geschwindigkeit.<br />
@@ -49,8 +55,14 @@
         </p>
     </div>
     
-    <div class="category-item" data-category="sportbikes" data-price="20000">
-        <img src="https://static.wikia.nocookie.net/gtawiki/images/3/3f/HakuchouDrag-GTAO.png" alt="Shitzu Hakuchou Drag" />
+    <div class="category-item"
+      data-category="sportbikes"
+      data-price="20000"
+      data-speed="wert"
+      data-weight="wert"
+      data-acceleration="wert"
+      onclick="openPopup(this)">
+        <img src="bild" alt="Shitzu Hakuchou Drag" />
         <p>
           <strong>Shitzu Hakuchou Drag</strong><br />
           High-Performance Motorrad.<br />
@@ -284,6 +296,32 @@
         });
       });
     }
+
+    function openPopup(element) {
+  // Titel und Bild
+  const title = element.querySelector('strong')?.innerText || '';
+  const imgSrc = element.querySelector('img')?.src || '';
+
+  // Daten aus Attributen
+  const speed = element.getAttribute('data-speed') || '–';
+  const weight = element.getAttribute('data-weight') || '–';
+  const acceleration = element.getAttribute('data-acceleration') || '–';
+  const category = element.getAttribute('data-category') || '';
+  const price = element.getAttribute('data-price') || '';
+
+  // Inhalte setzen
+  document.getElementById('popupTitle').innerText = title;
+  document.getElementById('popupImg').src = imgSrc;
+  document.getElementById('popupCategory').innerText = category;
+  document.getElementById('popupPrice').innerText = `Preis: ${price}$`;
+
+  document.getElementById('specSpeed').innerText = speed;
+  document.getElementById('specAcceleration').innerText = acceleration;
+  document.getElementById('specWeight').innerText = weight;
+
+  // Popup anzeigen
+  document.getElementById('popup').style.display = 'flex';
+}
 
     function closePopup() {
       document.getElementById('popup').style.display = 'none';
