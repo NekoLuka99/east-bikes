@@ -212,3 +212,13 @@ footer {
     height: auto;
   }
 }
+/* === Pop-up Optimierung === */
+.popup-overlay {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  display: flex;
+}
